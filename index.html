@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    <p id="directions"> Press t or f anything else and you die</p>
+  </head>
+  <body>
+    <p id="directions">Press t or f anything else and you die</p>
     <h1 id="question">Is the sky blue</h1>
     <h3 id="score">Score: 0</h3>
-    <script  type="text/javascript">
+    <script type="text/javascript">
+      var count = 0,
+        score = 0;
 
-        var count = 0, score = 0;
+      alert(
+        "Welcome to turtles and foxes , in this Naruto quiz i will be asking a series of questions"
+      );
 
-        alert("Welcome to turtles and foxes , in this Naruto quiz i will be asking a series of questions")
+      var questions = [
+        { q: "Is the sky blue?", a: "t" },
+        { q: "there are 10 members of the Akatsuki", a: "f" },
+        { q: "does rock lee use charkra", a: "t" },
+        { q: "Sakura is faster than Might guy", a: "t" },
+        { q: "Sasori was the first to die in the Akatasuki", a: "t" },
+        {
+          q: "the 3rd great ninja war was shorter than the 4th great ninja war",
+          a: "f",
+        },
+        {
+          q: "Naruto uzamaki is the only member of team 7 that has never killed anyone",
+          a: "f",
+        },
+        {
+          q: "TonTon the pig had more screen time then Tenten in Naruto Shippuden",
+          a: "t",
+        },
+      ];
 
-        var questions = [ 
-            { q: "Is the sky blue?", a:  "t" }, 
-            { q: "there are 10 members of the Akatsuki", a: "f" }, 
-            { q: "does rock lee use charkra", a: "t" }, 
-            { q: "Sakura is faster than Might guy", a: "t" }, 
-            { q: "Sasori was the first to die in the Akatasuki", a: "t" },
-            { q: "the 3rd great ninja war was shorter than the 4th great ninja war", a: "f" }, 
-            { q: "Naruto uzamaki is the only member of team 7 that has never killed anyone", a: "f" }, 
-            { q: "TonTon the pig had more screen time then Tenten in Naruto Shippuden", a: "t" } ];
+      document.onkeyup = function (event) {
+        var letter = event.key.toLowerCase();
 
-        
-
-        document.onkeyup = function(event) {
-           var letter = event.key.toLowerCase();
-
-             if (letter == "t" || letter == "f"){
-                if(questions[count].a == letter){
-                    alert("you actually got it, nice!");
-                    score++;
-                    document.getElementById("score").innerHTML = "score" + score;
-                }
-                else{
-                    alert("Try again bro")
-                }
-                count++;
-                if(count < 10){
-                    document.getElementById("question").innerHTML = questions[count].q;
-                }
-                else{
-                    alert("you've reached the end, now go outside")
-                }
-
-            }
-            else{
-                alert("Pick turtle (T) or fox(F) you nub")
-            }
-
-
-
+        if (letter == "t" || letter == "f") {
+          if (questions[count].a == letter) {
+            alert("you actually got it, nice!");
+            score++;
+            document.getElementById("score").innerHTML = "score" + score;
+          } else {
+            alert("Try again bro");
+          }
+          count++;
+          if (count < 10) {
+            document.getElementById("question").innerHTML = questions[count].q;
+          } else {
+            alert("you've reached the end, now go outside");
+          }
+        } else {
+          alert("Pick turtle (T) or fox(F) you nub");
+        }
       };
-        
-      
-
-       
-
-
-
-
     </script>
 
-    <img src="https://1000logos.net/wp-content/uploads/2021/12/Akatsuki-Logo.png" alt="cloud"
-    width="700" 
-    height="500">
-
-</body>
+    <img
+      src="https://mail.google.com/mail/u/0?ui=2&ik=77c471505e&attid=0.1&permmsgid=msg-a:r-8761002817165034573&th=181d6b08e0534de2&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_GgH2JhG4D7hqSJhudr2g1XxGDBAt_Z7HK-mD5N9B08JmWE-RpDWDi0akSJpHcEVg76fH7846HDAHccxc3ZqrdKm60ciyaOspAS9OHUc2ewRR1ZZ4bCcJ_3WI&disp=emb&realattid=ii_l5agu2k70"
+      alt="cloud"
+      width="700"
+      height="500"
+    />
+  </body>
 </html>
